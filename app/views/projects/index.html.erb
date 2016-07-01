@@ -1,37 +1,43 @@
-<div class="jumbotron" style="background-image: url(https://s3-ap-northeast-1.amazonaws.com/moonproject/img/moon01.jpg); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
+<div class="jumbotron" style="background-image: url(https://s3-ap-northeast-1.amazonaws.com/moonproject/img/more.jpg); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
   <div class="container">
-    <h1 style="color: white">Moon Project</h1>
-    <h1 style="color: white">登月計劃</h1>
-    <h2 style="color: white">協助實現夢想的工具</h2>
+    <h1 style="color: white">More Project</h1>
+    <h1 style="color: white">登月計劃看板</h1>
+    <h2 style="color: white">給夥伴鼓勵和建議</h2>
   </div>
 </div>
 
-<form role="form">
-  <div class="form-group">
-    <label>這次的登月目標是什麼？</label>
-    <input type="text" class="form-control" placeholder="跑馬拉松">
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <% @projects.each do |project| %>
+      <ul class="list-group">
+        <a href="<%= project_path(project) %>"class="list-group-item active">
+          <%= project.mastergoal %> <span style="float:right" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"</span>
+        </a>
+        <li class="list-group-item">
+          <h4>登月目標是?</h4>
+          <p><%= project.mastergoal %></p>
+        </li>
+        <li class="list-group-item">
+          <h4>子目標是?</h4>
+          <p><%= project.secondgoal %></p>
+        </li>
+        <li class="list-group-item">
+          <h4>怎樣算是成功？</h4>
+          <p><%= project.success %></p>
+        </li>
+        <li class="list-group-item">
+          <h4>有可能辦到嗎？</h4>
+          <p><%= project.how %></p>
+        </li>
+        <li class="list-group-item">
+          <h4>能配合現實生活嗎？</h4>
+          <p><%= project.can %></p>
+        </li>
+        <li class="list-group-item">
+          <h4>時間進度怎麼定？</h4>
+          <p><%= project.when %></p>
+        </li>
+      </ul>
+    <% end %>
   </div>
-    <div class="form-group">
-    <label>明確的子目標是什麼？</label>
-    <input type="text" class="form-control" placeholder="不間斷跑十一公里">
-  </div>
-    <div class="form-group">
-    <label>怎樣才算是成功？</label>
-    <input type="text" class="form-control" placeholder="每天跑兩圈公園，不能用走的">
-  </div>
-    <div class="form-group">
-    <label>這件事有可能辦到嗎？</label>
-    <input type="text" class="form-control" placeholder="有可能，只要我一星期跑三次的話">
-  </div>
-    <div class="form-group">
-    <label>這件事能配合現實生活嗎？</label>
-    <input type="text" class="form-control" placeholder="如果每星期一三五都早點起床，就可能辦到">
-  </div>
-    <div class="form-group">
-    <label>時間進度怎麼定？</label>
-    <input type="text" class="form-control" placeholder="本週跑五公里，下週跑六公里，下下週跑七公里">
-  </div>
-  <div class="form-group">
-      <button type="submit" class="btn btn-default">Save</button>
-  </div>
-</form>
+</div>

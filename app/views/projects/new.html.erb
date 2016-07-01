@@ -1,78 +1,19 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    Panel content
-  </div>
-</div>
-
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-  <p></p>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    Panel content
+<div class="jumbotron" style="background-image: url(https://s3-ap-northeast-1.amazonaws.com/moonproject/img/new.jpg); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
+  <div class="container">
+    <h1 style="color: white">Moon Project</h1>
+    <h1 style="color: white">每天累積</h1>
+    <h2 style="color: white">一點點的進步</h2>
   </div>
 </div>
-
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-  <p></p>
+<div>
+  <%= simple_form_for @project do |f| %>
+    <%= f.input :mastergoal, required: true, label: '這次的登月目標是什麼？', placeholder: '跑馬拉松' %>
+    <%= f.input :secondgoal, required: true, label: '明確的子目標是什麼？', placeholder: '不間斷跑十一公里' %>
+    <%= f.input :success, required: true, label: '怎樣才算是成功？', placeholder: '有可能，只要我一星期跑三次的話' %>
+    <%= f.input :can, required: true, label: '這件事有可能辦到嗎？', placeholder: '跑馬拉松' %>
+    <%= f.input :how, required: true, label: '這件事能配合現實生活嗎？', placeholder: '如果每星期一三五都早點起床，就可能辦到' %>
+    <%= f.input :when, required: true, label: '時間進度怎麼定？', placeholder: '本週跑五公里，下週跑六公里，下下週跑七公里' %>
+    <%= f.submit 'Save', class: "btn btn-primary" %>
+  <% end %>
 </div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    Panel content
-  </div>
-</div>
-
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-  <p></p>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    Panel content
-  </div>
-</div>
-
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-  <p></p>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    Panel content
-  </div>
-</div>
-
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-  <p></p>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    Panel content
-  </div>
-</div>
+<p></p>

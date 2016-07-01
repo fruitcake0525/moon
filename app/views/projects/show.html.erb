@@ -1,0 +1,87 @@
+<div class="jumbotron" style="background-image: url(https://s3-ap-northeast-1.amazonaws.com/moonproject/img/show.jpg); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
+  <div class="container">
+    <h1 style="color: white">Moon Project</h1>
+    <h1 style="color: white">你已經成功</h1>
+    <h2 style="color: white">跨出第一步</h2>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
+  </div>
+  <div class="panel-body" style="text-align:center">
+    <%= @project.mastergoal %>
+  </div>
+</div>
+
+<div style="text-align:center">
+  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  <p></p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
+  </div>
+  <div class="panel-body" style="text-align:center">
+    <%= @project.secondgoal %>
+  </div>
+</div>
+
+<div style="text-align:center">
+  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  <p></p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
+  </div>
+  <div class="panel-body" style="text-align:center">
+    <%= @project.success %>
+  </div>
+</div>
+
+<div style="text-align:center">
+  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  <p></p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
+  </div>
+  <div class="panel-body" style="text-align:center">
+    <%= @project.can %>
+  </div>
+</div>
+
+<div style="text-align:center">
+  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  <p></p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
+  </div>
+  <div class="panel-body" style="text-align:center">
+    <%= @project.how %>
+  </div>
+</div>
+
+<div style="text-align:center">
+  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  <p></p>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
+  </div>
+  <div class="panel-body" style="text-align:center">
+    <%= @project.when %>
+  </div>
+</div>
+<p></p>
+
