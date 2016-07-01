@@ -11,30 +11,30 @@
     <% @projects.each do |project| %>
       <ul class="list-group">
         <a href="<%= project_path(project) %>"class="list-group-item active">
-          <%= project.mastergoal %> <span style="float:right" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"</span>
+          <h4><%= project.mastergoal %><span style="float:right" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"</span></h4>
         </a>
         <li class="list-group-item">
-          <h4>登月目標是?</h4>
+          <p><strong>登月目標是?</strong></p>
           <p><%= project.mastergoal %></p>
         </li>
         <li class="list-group-item">
-          <h4>子目標是?</h4>
+          <p><strong>子目標是?</strong></p>
           <p><%= project.secondgoal %></p>
         </li>
         <li class="list-group-item">
-          <h4>怎樣算是成功？</h4>
+          <p><strong>怎樣算是成功？</strong></p>>
           <p><%= project.success %></p>
         </li>
         <li class="list-group-item">
-          <h4>有可能辦到嗎？</h4>
+          <p><strong>有可能辦到嗎？</strong></p>
           <p><%= project.how %></p>
         </li>
         <li class="list-group-item">
-          <h4>能配合現實生活嗎？</h4>
+          <p><strong>能配合現實生活嗎？</strong></p>
           <p><%= project.can %></p>
         </li>
         <li class="list-group-item">
-          <h4>時間進度怎麼定？</h4>
+          <p><strong>時間進度怎麼定？</strong></p>
           <p><%= project.when %></p>
         </li>
       </ul>
