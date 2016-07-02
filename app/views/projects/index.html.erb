@@ -7,8 +7,8 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-4 col-md-3">
-    <% @projects.each do |project| %>
+  <% @projects.each do |project| %>
+    <div class="col-sm-4 col-md-3">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">登月目標 : <%= project.mastergoal %></h4>
@@ -23,6 +23,6 @@
           <a href="<%= project_path(project) %>" class="btn btn-primary btn-block" role="button">看計畫</a>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
