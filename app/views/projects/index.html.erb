@@ -7,37 +7,22 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6 col-md-4">
+  <div class="col-sm-4 col-md-3">
     <% @projects.each do |project| %>
-      <ul class="list-group">
-        <a href="<%= project_path(project) %>"class="list-group-item active">
-          <h4><%= project.mastergoal %><span style="float:right" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"</span></h4>
-        </a>
-        <li class="list-group-item">
-          <p><strong>登月目標是?</strong></p>
-          <p><%= project.mastergoal %></p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>子目標是?</strong></p>
-          <p><%= project.secondgoal %></p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>怎樣算是成功？</strong></p>
-          <p><%= project.success %></p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>有可能辦到嗎？</strong></p>
-          <p><%= project.how %></p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>能配合現實生活嗎？</strong></p>
-          <p><%= project.can %></p>
-        </li>
-        <li class="list-group-item">
-          <p><strong>時間進度怎麼定？</strong></p>
-          <p><%= project.when %></p>
-        </li>
-      </ul>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">登月目標 : <%= project.mastergoal %></h4>
+        </div>
+        <div class="panel-body">
+          <h5>執行進度</h5>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+            <span class="sr-only">45% Complete</span>
+            </div>
+          </div>
+          <a href="<%= project_path(project) %>" class="btn btn-primary btn-block" role="button">看計畫</a>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
