@@ -9,130 +9,133 @@
 <div role="tabpanel">
 
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" class="active"><a href="#project" aria-controls="project" role="tab" data-toggle="tab">MoonProject</a></li>
+    <li role="presentation"><a href="#remind" aria-controls="standup" role="tab" data-toggle="tab">Remind</a></li>
+    <li role="presentation"><a href="#standup" aria-controls="standup" role="tab" data-toggle="tab">StandUp</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">...</div>
-    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-    <div role="tabpanel" class="tab-pane" id="settings">...</div>
-  </div>
+    <div role="tabpanel" class="tab-pane active" id="project">
+      <br>
+      <br>
+      <div class="panel panel-default " style="width: 80%; margin: 0px auto">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
+        </div>
+        <div class="panel-body" style="text-align:center">
+          <h4><%= @project.mastergoal %></h4>
+        </div>
+      </div>
 
+      <br>
+      <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+      </div>
+      <br>
+
+      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
+        </div>
+        <div class="panel-body" style="text-align:center">
+          <h4><%= @project.secondgoal %></h4>
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+      </div>
+      <br>
+
+      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
+        </div>
+        <div class="panel-body" style="text-align:center">
+          <h4><%= @project.success %></h4>
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+      </div>
+      <br>
+
+      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
+        </div>
+        <div class="panel-body" style="text-align:center">
+          <h4><%= @project.can %></h4>
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+      </div>
+      <br>
+
+      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
+        </div>
+        <div class="panel-body" style="text-align:center">
+          <h4><%= @project.how %></h4>
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+      </div>
+      <br>
+
+      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
+        </div>
+        <div class="panel-body" style="text-align:center">
+          <h4><%= @project.when %></h4>
+        </div>
+      </div>
+
+      <hr>
+      <br>
+      <div id="disqus_thread" style="width: 80%; margin: 0px auto"></div>
+        <script>
+          (function() {  // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//moon-project.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>
+          Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    <div role="tabpanel" class="tab-pane" id="remind">
+      <br>
+        設置提醒時間，連動進度條．
+      <br>
+      <br>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="standup">
+      <br>
+        每個提醒時間的完成日誌．
+      <br>
+      <br>
+    </div>
+  </div>
 </div>
 
-<div class="panel panel-default " style="width: 80%; margin: 0px auto">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    <h4><%= @project.mastergoal %></h4>
-  </div>
-</div>
 
-<br>
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-</div>
-<br>
-
-<div class="panel panel-default" style="width: 80%; margin: 0px auto">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    <h4><%= @project.secondgoal %></h4>
-  </div>
-</div>
-
-<br>
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-</div>
-<br>
-
-<div class="panel panel-default" style="width: 80%; margin: 0px auto">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    <h4><%= @project.success %></h4>
-  </div>
-</div>
-
-<br>
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-</div>
-<br>
-
-<div class="panel panel-default" style="width: 80%; margin: 0px auto">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    <h4><%= @project.can %></h4>
-  </div>
-</div>
-
-<br>
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-</div>
-<br>
-
-<div class="panel panel-default" style="width: 80%; margin: 0px auto">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    <h4><%= @project.how %></h4>
-  </div>
-</div>
-
-<br>
-<div style="text-align:center">
-  <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-</div>
-<br>
-
-<div class="panel panel-default" style="width: 80%; margin: 0px auto">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
-  </div>
-  <div class="panel-body" style="text-align:center">
-    <h4><%= @project.when %></h4>
-  </div>
-</div>
-
-<hr>
-<br>
-<div id="disqus_thread" style="width: 80%; margin: 0px auto"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//moon-project.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 
