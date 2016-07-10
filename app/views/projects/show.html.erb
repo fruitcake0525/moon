@@ -1,4 +1,4 @@
-<div class="jumbotron" style="background-image: url(https://s3-ap-northeast-1.amazonaws.com/moonproject/img/show.jpg); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
+<div class="jumbotron hidden-print" style="background-image: url(https://s3-ap-northeast-1.amazonaws.com/moonproject/img/show.jpg); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
   <div class="container">
     <h1 style="color: white">Moon Project</h1>
     <h1 style="color: white">你已經成功</h1>
@@ -9,7 +9,7 @@
 <div role="tabpanel">
 
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs nav-justified" role="tablist">
+  <ul class="nav nav-tabs nav-justified hidden-print" role="tablist">
     <li role="presentation" class="active"><a href="#project" aria-controls="project" role="tab" data-toggle="tab">MoonProject</a></li>
     <li role="presentation"><a href="#remind" aria-controls="standup" role="tab" data-toggle="tab">Remind</a></li>
     <li role="presentation"><a href="#standup" aria-controls="standup" role="tab" data-toggle="tab">StandUp</a></li>
@@ -103,10 +103,17 @@
           <h4><%= @project.when %></h4>
         </div>
       </div>
+      <div class="hidden-print">
+        <hr>
+        <br>
+      </div>
 
-      <hr>
-      <br>
-      <div id="disqus_thread" style="width: 80%; margin: 0px auto"></div>
+      <div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57828bcbd1ef9ca3"></script>
+      </div>
+
+      <div class= "hidden-print" id="disqus_thread" style="width: 80%; margin: 0px auto"></div>
         <script>
           (function() {  // DON'T EDIT BELOW THIS LINE
             var d = document, s = d.createElement('script');
