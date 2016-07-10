@@ -1,0 +1,31 @@
+<div class="page-header">
+<h1>更新帳號</h1>
+</div>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, required: true %>
+    <%= f.input :email, required: true, autofocus: true %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password, autocomplete: "off", hint: "如果你沒有要更新密碼，請保持空白", required: false %>
+    <%= f.input :password_confirmation, required: false %>
+    <%= f.input :current_password, hint: "請輸入目前的密碼，才能更換帳號", required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "更新" %>
+  </div>
+<% end %>
+
+<h3>刪除我的帳號</h3>
+
+<p>不開心嗎? <%= link_to "刪除帳號", registration_path(resource_name), data: { confirm: "你確定要刪除嗎?" }, method: :delete %></p>
+
+<%= link_to "上一頁", :back %>
+<br></br>

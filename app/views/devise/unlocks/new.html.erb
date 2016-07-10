@@ -1,0 +1,18 @@
+<div class="page-header">
+<h1>重新發送解鎖提示</h1>
+</div>
+
+<%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.full_error :unlock_token %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "重新發送" %>
+  </div>
+<% end %>
+<p></p>
+<%= render "devise/shared/links" %>

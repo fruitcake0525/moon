@@ -1,0 +1,5 @@
+<p>Welcome <%= @email %>!</p>
+
+<p>您可以點擊下列連結，來認證您的Email:</p>
+
+<p><%= link_to '認證我的Email', confirmation_url(@resource, confirmation_token: @token) %></p>

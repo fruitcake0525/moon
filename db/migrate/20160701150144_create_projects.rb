@@ -7,7 +7,6 @@ class CreateProjects < ActiveRecord::Migration
       t.string :can
       t.string :how
       t.string :when
-      t.string :string
 
       t.timestamps null: false
     end

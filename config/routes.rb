@@ -1,6 +1,25 @@
 Rails.application.routes.draw do
-  resources :projects
   root 'landingpage#index'
+
+  devise_for :users
+
+  namespace :admin do
+    resources :projects
+    resources :users do
+      member do
+        post :to_admin
+        post :to_normal
+      end
+    end
+  end
+
+  namespace :account do
+    resources :projects
+  end
+
+  resources :projects
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
