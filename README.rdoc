@@ -1,12 +1,10 @@
-== README
+== Moon Project
+* http://fruitcake0525.logdown.com/categories/MoonProject
 
-### Moon Project
-http://fruitcake0525.logdown.com/categories/MoonProject
+==== History
+* v1.1 - 20160710
+* v1.0 - 20160702
 
-### History
-	v1.1 - 20160710
-	v1.0 - 20160702
-
-### Version:
-v1.0 - Bootstrap + Basic Creat&Read
-V1.1 - CRUD + Devise(admin&user)
+==== Version:
+* v1.0 - Bootstrap + Basic Creat&Read
+* V1.1 - CRUD + Devise(admin&user)
