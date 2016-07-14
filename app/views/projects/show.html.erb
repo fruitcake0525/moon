@@ -107,27 +107,9 @@
         <hr>
         <br>
       </div>
+      <%= render "plugin/addthis" %>
+      <%= render "plugin/disqus" %>
 
-      <div>
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57828bcbd1ef9ca3"></script>
-      </div>
-
-      <div class= "hidden-print" id="disqus_thread" style="width: 80%; margin: 0px auto"></div>
-        <script>
-          (function() {  // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-
-            s.src = '//moon-project.disqus.com/embed.js';
-
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>
-          Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-        </noscript>
-      </div>
     <div role="tabpanel" class="tab-pane" id="remind">
       <br>
         設置提醒時間，連動進度條．
