@@ -3,7 +3,7 @@
 </div>
 
 <div>
-  <%= simple_form_for @project do |f| %>
+  <%= simple_form_for([:admin, @project]) do |f| %>
     <%= f.input :mastergoal, required: true, label: '這次的登月目標是什麼？', placeholder: '跑馬拉松' %>
     <%= f.input :secondgoal, required: true, label: '明確的子目標是什麼？', placeholder: '不間斷跑十一公里' %>
     <%= f.input :success, required: true, label: '怎樣才算是成功？', placeholder: '每天跑兩圈公園，不能用走的' %>

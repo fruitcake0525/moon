@@ -28,23 +28,13 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if current_user.is_admin?
-      @project = Project.find(params[:id])
-
-      if @project.update(project_params)
-        redirect_to admin_project_path(@project)
-      else
-        render :edit
-      end
-    else
-      @project = current_user.projects.find(params[:id])
+    @project = current_user.projects.find(params[:id])
 
       if @project.update(project_params)
         redirect_to project_path(@project)
       else
         render :edit
       end
-    end
   end
 
   def destroy
