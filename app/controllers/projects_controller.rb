@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -14,12 +14,25 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.projects.new(project_params)
+    if !current_user
+      @project = project.new(project_params)
+      session[:project_id] = @project.id
 
-    if @project.save
-      redirect_to project_path(@project)
+      if @project.save
+        redirect_to project_path(@project)
+      else
+        render :new
+      end
+
     else
-      render :new
+      @project = current_user.projects.new(project_params)
+
+      if @project.save
+        redirect_to project_path(@project)
+      else
+        render :new
+      end
+
     end
   end
 
