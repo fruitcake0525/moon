@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710060657) do
+ActiveRecord::Schema.define(version: 20160801083515) do
+
+  create_table "dreams", force: :cascade do |t|
+    t.string   "mastergoal"
+    t.string   "secondgoal"
+    t.string   "success"
+    t.string   "can"
+    t.string   "how"
+    t.string   "when"
+    t.boolean  "owner_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "mastergoal"

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -7,6 +7,9 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    if session[:dream_id].present?
+      @dream = Dream.find_by(id: session[:dream_id])
+    end
   end
 
   def show
@@ -14,25 +17,15 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    if !current_user
-      @project = project.new(project_params)
-      session[:project_id] = @project.id
+    @project = current_user.projects.new(project_params)
 
-      if @project.save
-        redirect_to project_path(@project)
-      else
-        render :new
-      end
-
+    if @project.save
+      @dream = Dream.find_by(id: session[:dream_id])
+      @dream.destroy
+      session[:dream_id] = nil
+      redirect_to project_path(@project)
     else
-      @project = current_user.projects.new(project_params)
-
-      if @project.save
-        redirect_to project_path(@project)
-      else
-        render :new
-      end
-
+      render :new
     end
   end
 
@@ -43,11 +36,11 @@ class ProjectsController < ApplicationController
   def update
     @project = current_user.projects.find(params[:id])
 
-      if @project.update(project_params)
-        redirect_to project_path(@project)
-      else
-        render :edit
-      end
+    if @project.update(project_params)
+      redirect_to project_path(@project)
+    else
+      render :edit
+    end
   end
 
   def destroy

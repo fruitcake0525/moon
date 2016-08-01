@@ -1,0 +1,5 @@
+<% if !current_user %>
+  <%= render "dreams/new" %>
+<% else %>
+  <%= render "projects/new" %>
+<% end %>
