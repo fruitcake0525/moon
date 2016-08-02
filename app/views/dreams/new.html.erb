@@ -1,5 +1,5 @@
-<% if !current_user %>
-  <%= render "dreams/new" %>
+<% if session[:dream_id].present? %>
+  <%= render "dreams/show_session" %>
 <% else %>
-  <%= render "projects/new" %>
+  <%= render "dreams/new_session" %>
 <% end %>

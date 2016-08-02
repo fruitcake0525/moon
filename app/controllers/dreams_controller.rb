@@ -5,15 +5,55 @@ class DreamsController < ApplicationController
     else
       @dream = Dream.new
     end
-    @project = Project.new
   end
 
   def create
     @dream = Dream.new(dream_params)
 
     if @dream.save
-      session[:dream_id] = @dream.id
-      redirect_to new_user_session_path
+      if !current_user
+        session[:dream_id] = @dream.id
+        redirect_to new_user_session_path
+      else
+        @project = current_user.projects.new
+        @project.mastergoal = @dream.mastergoal
+        @project.secondgoal = @dream.secondgoal
+        @project.success = @dream.success
+        @project.can = @dream.can
+        @project.how = @dream.how
+        @project.when = @dream.when
+        @project.owner_name = @dream.owner_name
+        @project.save
+        @dream.destroy
+        session[:dream_id] = nil
+        redirect_to project_path(@project)
+      end
+    else
+      render :new
+    end
+  end
+
+  def update
+    @dream = Dream.find(params[:id])
+
+    if @dream.update
+      if !current_user
+        session[:dream_id] = @dream.id
+        redirect_to new_user_session_path
+      else
+        @project = current_user.projects.new
+        @project.mastergoal = @dream.mastergoal
+        @project.secondgoal = @dream.secondgoal
+        @project.success = @dream.success
+        @project.can = @dream.can
+        @project.how = @dream.how
+        @project.when = @dream.when
+        @project.owner_name = @dream.owner_name
+        @project.save
+        @dream.destroy
+        session[:dream_id] = nil
+        redirect_to project_path(@project)
+      end
     else
       render :new
     end
@@ -24,4 +64,5 @@ class DreamsController < ApplicationController
   def dream_params
     params.require(:dream).permit(:mastergoal, :secondgoal, :success, :can, :how, :when, :owner_name)
   end
+
 end

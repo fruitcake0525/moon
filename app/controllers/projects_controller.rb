@@ -5,28 +5,8 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
-  def new
-    @project = Project.new
-    if session[:dream_id].present?
-      @dream = Dream.find_by(id: session[:dream_id])
-    end
-  end
-
   def show
     @project = Project.find(params[:id])
-  end
-
-  def create
-    @project = current_user.projects.new(project_params)
-
-    if @project.save
-      @dream = Dream.find_by(id: session[:dream_id])
-      @dream.destroy
-      session[:dream_id] = nil
-      redirect_to project_path(@project)
-    else
-      render :new
-    end
   end
 
   def edit
