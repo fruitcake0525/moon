@@ -6,122 +6,97 @@
   </div>
 </div>
 
-<div role="tabpanel">
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs nav-justified hidden-print" role="tablist">
-    <li role="presentation" class="active"><a href="#project" aria-controls="project" role="tab" data-toggle="tab">MoonProject</a></li>
-    <li role="presentation"><a href="#remind" aria-controls="standup" role="tab" data-toggle="tab">Remind</a></li>
-    <li role="presentation"><a href="#standup" aria-controls="standup" role="tab" data-toggle="tab">StandUp</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="project">
-      <br>
-      <br>
-      <div class="panel panel-default " style="width: 80%; margin: 0px auto">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
-        </div>
-        <div class="panel-body" style="text-align:center">
-          <h4><%= @project.mastergoal %></h4>
-        </div>
-      </div>
-
-      <br>
-      <div style="text-align:center">
-      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-      </div>
-      <br>
-
-      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
-        </div>
-        <div class="panel-body" style="text-align:center">
-          <h4><%= @project.secondgoal %></h4>
-        </div>
-      </div>
-
-      <br>
-      <div style="text-align:center">
-        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-      </div>
-      <br>
-
-      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
-        </div>
-        <div class="panel-body" style="text-align:center">
-          <h4><%= @project.success %></h4>
-        </div>
-      </div>
-
-      <br>
-      <div style="text-align:center">
-        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-      </div>
-      <br>
-
-      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
-        </div>
-        <div class="panel-body" style="text-align:center">
-          <h4><%= @project.can %></h4>
-        </div>
-      </div>
-
-      <br>
-      <div style="text-align:center">
-        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-      </div>
-      <br>
-
-      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
-        </div>
-        <div class="panel-body" style="text-align:center">
-          <h4><%= @project.how %></h4>
-        </div>
-      </div>
-
-      <br>
-      <div style="text-align:center">
-        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-      </div>
-      <br>
-
-      <div class="panel panel-default" style="width: 80%; margin: 0px auto">
-        <div class="panel-heading">
-          <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
-        </div>
-        <div class="panel-body" style="text-align:center">
-          <h4><%= @project.when %></h4>
-        </div>
-      </div>
-      <div class="hidden-print">
-        <hr>
-        <br>
-      </div>
-      <%= render "plugin/sumome" %>
-      <%= render "plugin/disqus" %>
-
-    <div role="tabpanel" class="tab-pane" id="remind">
-      <br>
-        設置提醒時間，連動進度條．
-      <br>
-      <br>
+<div>
+  <br>
+  <div class="panel panel-default " style="width: 80%; margin: 0px auto">
+    <div class="panel-heading">
+      <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
     </div>
-    <div role="tabpanel" class="tab-pane" id="standup">
-      <br>
-        每個提醒時間的完成日誌．
-      <br>
-      <br>
+    <div class="panel-body" style="text-align:center">
+      <h4><%= @project.mastergoal %></h4>
     </div>
+  </div>
+
+  <br>
+  <div style="text-align:center">
+    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  </div>
+  <br>
+
+  <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+    <div class="panel-heading">
+      <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
+    </div>
+    <div class="panel-body" style="text-align:center">
+      <h4><%= @project.secondgoal %></h4>
+    </div>
+  </div>
+
+  <br>
+  <div style="text-align:center">
+    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  </div>
+  <br>
+
+  <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+    <div class="panel-heading">
+      <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
+    </div>
+    <div class="panel-body" style="text-align:center">
+       <h4><%= @project.success %></h4>
+    </div>
+  </div>
+
+  <br>
+  <div style="text-align:center">
+    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  </div>
+  <br>
+
+  <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+    <div class="panel-heading">
+      <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
+    </div>
+    <div class="panel-body" style="text-align:center">
+      <h4><%= @project.can %></h4>
+    </div>
+  </div>
+
+  <br>
+  <div style="text-align:center">
+    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  </div>
+  <br>
+
+  <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+    <div class="panel-heading">
+       <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
+    </div>
+    <div class="panel-body" style="text-align:center">
+      <h4><%= @project.how %></h4>
+    </div>
+  </div>
+
+  <br>
+  <div style="text-align:center">
+    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  </div>
+  <br>
+
+  <div class="panel panel-default" style="width: 80%; margin: 0px auto">
+    <div class="panel-heading">
+      <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
+    </div>
+    <div class="panel-body" style="text-align:center">
+      <h4><%= @project.when %></h4>
+    </div>
+  </div>
+  <div class="hidden-print">
+    <br>
+    <hr>
+    <br>
+    <%= render "plugin/sumome" %>
+    <%= render "plugin/disqus" %>
   </div>
 </div>
 
