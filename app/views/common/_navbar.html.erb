@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li> <%= link_to("開始計劃", new_dream_path) %> </li>
-        <li> <%= link_to("夢想夥伴", projects_path) %> </li>
+        <li> <%= link_to("計劃看板", projects_path) %> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
@@ -29,6 +29,7 @@
               <% if current_user.admin? %>
                 <li><%= link_to("管理使用者", admin_users_path) %></li>
                 <li><%= link_to("管理全部計畫", admin_projects_path) %></li>
+                <li><%= link_to("查看遺失的夢想", admin_dreams_path) %></li>
               <% end %>
               <li class="divider"></li>
               <li><%= link_to("登出", destroy_user_session_path, method: :delete ) %></li>
