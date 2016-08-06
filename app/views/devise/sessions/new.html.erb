@@ -7,6 +7,8 @@
       <div class="panel-body" style="margin: 0px auto">
         <div>
           <%= link_to "使用Facebook登入", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-block"%>
+          <br>
+          <%= link_to "使用Google登入", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-danger btn-block"%>
         </div>
         <hr>
         <div>
