@@ -4,7 +4,7 @@ class Admin::ProjectsController < ApplicationController
   before_action :admin_required
 
   def index
-    @projects = Project.all
+    @projects = Project.all.order("created_at ASC")
   end
 
   def edit

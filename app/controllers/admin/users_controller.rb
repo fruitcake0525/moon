@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   before_action :admin_required
 
   def index
-    @users = User.all
+    @users = User.all.order("id ASC")
   end
 
   def to_admin

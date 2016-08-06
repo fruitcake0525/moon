@@ -25,21 +25,9 @@
               0%
             </div>
           </div>
-          <% if project.editable_by?(current_user) %>
-            <div class="btn-group btn-group-justified" role="group" aria-label="...">
-              <div class="btn-group" role="group">
-                <%= link_to("看計畫", project_path(project), class: "btn btn-default", role: "button") %>
-              </div>
-                <div class="btn-group" role="group">
-                  <%= link_to("修改", edit_project_path(project), class: "btn btn-primary", role: "button") %>
-                </div>
-                <div class="btn-group" role="group">
-                  <%= link_to("刪除", project_path(project), data: { confirm: "你確定要刪除嗎?" }, method: :delete, class: "btn btn-danger", role: "button") %>
-                </div>
-            </div>
-          <% else %>
+          <div>
             <%= link_to("看計畫", project_path(project), class: "btn btn-primary btn-block", role: "button") %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
