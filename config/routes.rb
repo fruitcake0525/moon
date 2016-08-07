@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
   root 'landingpage#index'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+#  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, skip: :registrations
+  devise_scope :user do
+  resource :registration,
+    only: [:new, :create, :edit, :update],
+    path: 'users',
+    path_names: { new: 'sign_up' },
+    controller: 'devise/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    as: :user_registration do
+      get :cancel
+    end
+  end
 
   namespace :admin do
     resources :projects
