@@ -9,10 +9,10 @@ Rails.application.routes.draw do
       path: 'users',
       path_names: { new: 'sign_up' },
       controller: 'devise/registrations',
-      :omniauth_callbacks => "users/omniauth_callbacks",
       as: :user_registration do
         get :cancel
       end
+    resource :omniauth_callbacks, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   end
 
   namespace :admin do
