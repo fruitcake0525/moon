@@ -34,9 +34,9 @@ class DreamsController < ApplicationController
   end
 
   def update
-    @dream = Dream.find(params[:id])
+    @dream = Dream.find_by(id: session[:dream_id])
 
-    if @dream.update
+    if @dream.save
       if !current_user
         session[:dream_id] = @dream.id
         redirect_to new_user_session_path
