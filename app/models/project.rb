@@ -15,4 +15,6 @@ class Project < ActiveRecord::Base
   def showname?
     owner_name
   end
+
+  paginates_per 8
 end

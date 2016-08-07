@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   before_action :admin_required
 
   def index
-    @users = User.all.order("id ASC")
+    @users = User.all.order("id ASC").page(params[:page])
   end
 
   def to_admin

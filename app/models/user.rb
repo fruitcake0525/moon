@@ -27,4 +27,6 @@ class User < ActiveRecord::Base
     end
    # user.image = auth.info.image # assuming the user model has an image
   end
+
+  paginates_per 15
 end

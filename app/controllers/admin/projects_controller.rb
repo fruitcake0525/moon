@@ -4,7 +4,7 @@ class Admin::ProjectsController < ApplicationController
   before_action :admin_required
 
   def index
-    @projects = Project.all.order("created_at ASC")
+    @projects = Project.all.order("id ASC").page(params[:page])
   end
 
   def edit

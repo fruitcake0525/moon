@@ -5,4 +5,6 @@ class Dream < ActiveRecord::Base
   validates :can, presence: true
   validates :how, presence: true
   validates :when, presence: true
+
+  paginates_per 15
 end
