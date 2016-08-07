@@ -12,7 +12,7 @@ zh-TW:
         name: "姓名"
         email: "電子郵箱"
         password: "密碼"
-        password_confirmation: "密碼確認"
+        password_confirmation: "再次確認密碼"
         remember_me: "記住登入狀態"
         reset_password_token:
         unlock_token:
