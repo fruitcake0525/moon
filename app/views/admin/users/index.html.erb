@@ -8,7 +8,8 @@
       <th>ID</th>
       <th>Email</th>
       <th>權限</th>
-      <th>功能</th>
+      <th>權限轉換</th>
+      <th>刪除</th>
     </tr>
   </thead>
   <tbody>
@@ -33,6 +34,9 @@
           <% else %>
             <%= link_to("轉為管理者", to_admin_admin_user_path(user), method: :post, class: "btn btn-primary") %>
           <% end %>
+        </td>
+        <td>
+          <%= link_to("刪除使用者", admin_user_path(user), data: { confirm: "你確定要刪除嗎?" }, method: :delete, class: "btn btn-danger") %>
         </td>
       </tr>
     <% end %>
