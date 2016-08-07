@@ -12,7 +12,13 @@ Rails.application.routes.draw do
       as: :user_registration do
         get :cancel
       end
-    resource :omniauth_callbacks, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+    resource :omniauth_callbacks,
+      path: 'users',
+      path_names: { new: 'sign_up' },
+      controller: 'users/omniauth_callbacks',
+      as: :user_registration do
+        get :cancel
+      end
   end
 
   namespace :admin do
