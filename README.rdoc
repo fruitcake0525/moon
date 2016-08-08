@@ -1,5 +1,6 @@
 == Moon Project 登月計畫
-* http://fruitcake0525.logdown.com/categories/MoonProject
+* Blog: http://fruitcake0525.logdown.com/categories/MoonProject
+* Demo: https://moon-project.herokuapp.com/
 
 ==== History
 * v1.2.2 - 20160808
