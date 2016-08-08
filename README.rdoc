@@ -1,4 +1,4 @@
-== Moon Project
+== Moon Project 登月計畫
 * http://fruitcake0525.logdown.com/categories/MoonProject
 
 ==== History
@@ -7,6 +7,6 @@
 * v1.0   - 20160702
 
 ==== Version:
-* V1.2.2 - Devise(omniauth+cannot cancel account) + Comeback(login/logout) + kaminari + figaro + Unfinish_Form_session
+* V1.2.2 - Devise(omniauth+cannot cancel account) + Comeback(login/logout/session) + kaminari + figaro
 * V1.1   - CRUD + Devise(admin&user)
 * v1.0   - Bootstrap + Basic Creat&Read
