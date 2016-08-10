@@ -12,7 +12,8 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap-datepicker3
+ *= require jquery-ui
+ *= require jquery-ui/datepicker
  */
 
 
@@ -25,4 +26,8 @@ h1{
 
 body {
   font-familt: "Noto Sans TC";
+}
+
+.simple_form label {
+  margin: 2px 5px 2px 4px;
 }

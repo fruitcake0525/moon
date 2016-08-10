@@ -23,6 +23,7 @@ class DreamsController < ApplicationController
         @project.how = @dream.how
         @project.when = @dream.when
         @project.owner_name = @dream.owner_name
+        @project.finaldate = @dream.finaldate
         @project.save
         @dream.destroy
         session[:dream_id] = nil
@@ -49,6 +50,7 @@ class DreamsController < ApplicationController
         @project.how = @dream.how
         @project.when = @dream.when
         @project.owner_name = @dream.owner_name
+        @project.finaldate = @dream.finaldate
         @project.save
         @dream.destroy
         session[:dream_id] = nil

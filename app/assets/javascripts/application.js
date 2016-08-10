@@ -11,8 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
+//= require jquery-ui/datepicker
 //= require bootstrap-sprockets
-//= require bootstrap-datepicker
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on("page:load ready", function(){
+    $("input.datepicker").datepicker({ minDate: +1, maxDate: "+1Y" });
+});
