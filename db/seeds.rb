@@ -30,6 +30,7 @@ p.how = "如果每天晚上九點洗澡，十點看書助眠"
 p.when = "今天最晚十點洗澡，明天九點半洗，大後天九點洗"
 p.user_id = "1"
 p.owner_name = true
+p.finaldate = "2016-10-10"
 p.save
 
 s = Project.new
@@ -41,4 +42,5 @@ s.how = "避免卡關停頓，每週四參加RoR臺中練功房CodeReview，有�
 s.when = "每天的七點到九點是黃金CodingTime"
 s.user_id = "2"
 s.owner_name = true
+s.finaldate = "2016-10-10"
 s.save
