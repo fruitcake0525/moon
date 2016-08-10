@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
   validates :can, presence: true
   validates :how, presence: true
   validates :when, presence: true
+  validates :finaldate, presence: true
 
   def editable_by?(user)
     user && user == author
