@@ -42,6 +42,7 @@ gem 'kaminari'
 gem 'figaro'
 
 gem 'jquery-ui-rails'
+gem 'browser'
 
 
 # Use ActiveModel has_secure_password
