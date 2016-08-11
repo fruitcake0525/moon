@@ -10,6 +10,12 @@
     <%= f.input :can, required: true, label: '這件事有可能辦到嗎？', placeholder: '有可能，只要我一星期跑三次的話' %>
     <%= f.input :how, required: true, label: '這件事能配合現實生活嗎？', placeholder: '如果每星期一三五都早點起床，就可能辦到' %>
     <%= f.input :when, required: true, label: '時間進度怎麼定？', placeholder: '本週跑五公里，下週跑六公里，下下週跑七公里' %>
+    <% if browser.device.mobile? %>
+      <%= f.input :finaldate, required: true, label: '預定完成日期', as: :date, html5: true, input_html: {min: Date.today+1.day} %>
+    <% else %>
+      <%= f.input :finaldate, required: true, label: '預定完成日期', as: :date, html5: true, input_html: {min: Date.today+1.day} %>
+      <%#= f.input :finaldate, required: true, label: '預定完成日期', as: :datepicker %>
+    <% end %>
     <p><%= f.collection_radio_buttons :owner_name, [[true, '署名發表'] ,[false, '匿名發表']], :first, :last %></p>
     <%= f.submit 'Save', class: "btn btn-primary" %>
   <% end %>

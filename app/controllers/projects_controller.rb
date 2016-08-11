@@ -12,11 +12,12 @@ class ProjectsController < ApplicationController
     @progress3 = @project.finaldate
     @progress4 = (@progress1-@progress2).to_i
     @progress5 = (@progress3-@progress2).to_i
-    @progress6 = (@progress4*200)/@progress5
+    @progress6 = (@progress4*100)/@progress5
   end
 
   def edit
     @project = current_user.projects.find(params[:id])
+    @browser = Browser.new("Some User Agent", accept_language: "en-us")
   end
 
   def update

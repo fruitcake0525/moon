@@ -5,6 +5,7 @@ class DreamsController < ApplicationController
     else
       @dream = Dream.new
     end
+    @browser = Browser.new("Some User Agent", accept_language: "en-us")
   end
 
   def create

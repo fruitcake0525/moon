@@ -9,6 +9,7 @@ class Admin::ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @browser = Browser.new("Some User Agent", accept_language: "en-us")
   end
 
   def show
@@ -34,6 +35,6 @@ class Admin::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:mastergoal, :secondgoal, :success, :can, :how, :when, :owner_name)
+    params.require(:project).permit(:mastergoal, :secondgoal, :success, :can, :how, :when, :owner_name, :finaldate)
   end
 end
