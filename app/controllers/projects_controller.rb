@@ -17,7 +17,6 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = current_user.projects.find(params[:id])
-    @browser = Browser.new("Some User Agent", accept_language: "en-us")
   end
 
   def update
