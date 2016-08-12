@@ -41,9 +41,7 @@ gem 'kaminari'
 
 gem 'figaro'
 
-gem 'bootstrap-datepicker-rails'
-gem 'jquery-ui-rails'
-gem 'browser'
+gem 'awesome_rails_console'
 
 
 # Use ActiveModel has_secure_password

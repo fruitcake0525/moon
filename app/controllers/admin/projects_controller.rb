@@ -9,7 +9,6 @@ class Admin::ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
-    @browser = Browser.new("Some User Agent", accept_language: "en-us")
   end
 
   def show
@@ -20,6 +19,7 @@ class Admin::ProjectsController < ApplicationController
     d4 = (d1-d2).to_i
     d5 = (d3-d2).to_i
     @d6 = (d4*100)/d5
+    @d7 = (d3-d1).to_i
   end
 
   def update

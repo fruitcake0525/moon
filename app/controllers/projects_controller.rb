@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
     d4 = (d1-d2).to_i
     d5 = (d3-d2).to_i
     @d6 = (d4*100)/d5
+    @d7 = (d3-d1).to_i
   end
 
   def edit
