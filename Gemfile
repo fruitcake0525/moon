@@ -41,6 +41,7 @@ gem 'kaminari'
 
 gem 'figaro'
 
+gem 'bootstrap-datepicker-rails'
 gem 'jquery-ui-rails'
 gem 'browser'
 

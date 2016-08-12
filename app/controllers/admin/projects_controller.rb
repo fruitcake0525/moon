@@ -14,6 +14,12 @@ class Admin::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    d1 = Date.today
+    d2 = @project.created_at.to_date
+    d3 = @project.finaldate
+    d4 = (d1-d2).to_i
+    d5 = (d3-d2).to_i
+    @d6 = (d4*100)/d5
   end
 
   def update

@@ -7,12 +7,12 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @progress1 = Date.today
-    @progress2 = @project.created_at.to_date
-    @progress3 = @project.finaldate
-    @progress4 = (@progress1-@progress2).to_i
-    @progress5 = (@progress3-@progress2).to_i
-    @progress6 = (@progress4*100)/@progress5
+    d1 = Date.today
+    d2 = @project.created_at.to_date
+    d3 = @project.finaldate
+    d4 = (d1-d2).to_i
+    d5 = (d3-d2).to_i
+    @d6 = (d4*100)/d5
   end
 
   def edit

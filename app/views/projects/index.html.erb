@@ -8,12 +8,12 @@
 
 <div class="row">
   <% @projects.each do |project| %>
-    <% @progress1 = Date.today %>
-    <% @progress2 = project.created_at.to_date %>
-    <% @progress3 = project.finaldate %>
-    <% @progress4 = (@progress1-@progress2).to_i %>
-    <% @progress5 = (@progress3-@progress2).to_i %>
-    <% @progress6 = @progress4*100/@progress5 %>
+    <% d1 = Date.today %>
+    <% d2 = project.created_at.to_date %>
+    <% d3 = project.finaldate %>
+    <% d4 = (d1-d2).to_i %>
+    <% d5 = (d3-d2).to_i %>
+    <% @d6 = (d4*100)/d5 %>
     <div class="col-sm-6 col-md-3">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -27,8 +27,8 @@
           <h3><%= project.mastergoal %></h3>
           <h4>執行進度</h4>
           <div class="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= @progress6 %>%">
-              <%= @progress6 %>%
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= @d6 %>%">
+              <%= @d6 %>%
             </div>
           </div>
           <div>
