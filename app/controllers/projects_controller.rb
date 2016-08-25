@@ -7,7 +7,11 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    d1 = Date.today
+    if id Date.today > @project.finaldate
+      d1 = @project.finaldate
+    else
+      d1 = Date.today
+    end
     d2 = @project.created_at.to_date
     d3 = @project.finaldate
     d4 = (d1-d2).to_i
