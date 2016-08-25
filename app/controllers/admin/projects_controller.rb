@@ -13,7 +13,7 @@ class Admin::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    if id Date.today > @project.finaldate
+    if Date.today - @project.finaldate > 0
       d1 = @project.finaldate
     else
       d1 = Date.today
