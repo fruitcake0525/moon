@@ -15,7 +15,11 @@
   </thead>
   <tbody>
     <% @projects.each do |project| %>
-      <% d1 = Date.today %>
+      <% if Date.today - project.finaldate > 0 %>
+        <% d1 = project.finaldate %>
+      <% else %>
+        <% d1 = Date.today %>
+      <% end %>
       <% d2 = project.created_at.to_date %>
       <% d3 = project.finaldate %>
       <% d4 = (d1-d2).to_i %>
