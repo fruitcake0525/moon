@@ -8,15 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<div class="container">
   <%= render "common/navbar" %>
-  <%= notice_message %>
-  <%= yield %>
+  <div class="container">
+    <%= notice_message %>
+    <%= yield %>
+  </div>
   <%= render "common/footer" %>
   <%= render "plugin/ga" %>
   <%= render "plugin/messanger" %>
-</div>
 
 </body>
 </html>
