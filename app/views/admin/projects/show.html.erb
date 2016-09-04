@@ -1,0 +1,112 @@
+<div class="page-header" style="text-align: center">
+<h1>
+  <%= @project.author.name %>
+    <% if @project.showname? %>
+      (署名)
+    <% else %>
+      (匿名)
+    <% end %>
+</h1>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">登上月球倒數<%= @d7 %>天</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= @d6 %>%">
+          <%= @d6 %>%
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.mastergoal %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.secondgoal %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+         <h4><%= @project.success %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.can %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.how %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.when %></h4>
+      </div>
+    </div>
+  </div>
+</div>

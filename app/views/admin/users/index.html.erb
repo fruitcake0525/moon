@@ -1,0 +1,46 @@
+<div class="page-header">
+<h1>所有使用者</h1>
+</div>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>權限</th>
+      <th>權限轉換</th>
+      <th>刪除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.id %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+        <td>
+          <% if user.admin? %>
+            管理者
+          <% else %>
+            一般使用者
+          <% end %>
+        </td>
+        <td>
+          <% if user.admin? %>
+            <%= link_to("轉為一般使用者", to_normal_admin_user_path(user), method: :post, class: "btn btn-info") %>
+          <% else %>
+            <%= link_to("轉為管理者", to_admin_admin_user_path(user), method: :post, class: "btn btn-primary") %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to("刪除使用者", admin_user_path(user), data: { confirm: "你確定要刪除嗎?" }, method: :delete, class: "btn btn-danger") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>

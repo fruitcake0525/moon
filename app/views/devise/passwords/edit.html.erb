@@ -1,0 +1,21 @@
+<div class="page-header">
+<h1>修改你的帳號密碼</h1>
+</div>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :reset_password_token, as: :hidden %>
+  <%= f.full_error :reset_password_token %>
+
+  <div class="form-inputs">
+    <%= f.input :password, label: "New password", required: true, autofocus: true, hint: ("密碼至少為#{@minimum_password_length}個字母長度" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, label: "確認你的新密碼", required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "更改帳號密碼" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

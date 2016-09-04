@@ -1,0 +1,26 @@
+<div class="page-header">
+<h1>所有遺棄的夢想</h1>
+</div>
+
+<table class="table table-bordered table-hover" style="text-align: center">
+  <thead>
+    <tr>
+      <th class="text-center">夢想ID</th>
+      <th class="text-center">夢想名稱</th>
+      <th class="text-center">看夢想</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dreams.each do |dream| %>
+      <tr>
+        <td><%= dream.id %></td>
+        <td><%= dream.mastergoal %></td>
+        <td>
+          <%= link_to("查看", admin_dream_path(dream), class: "btn btn-default") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @dreams %>

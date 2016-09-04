@@ -1,0 +1,47 @@
+<div class="jumbotron" style="background-image: url(<%=  image_path("more.jpg") %>); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
+  <div class="container">
+    <h1 style="color: white">More Project</h1>
+    <h1 style="color: white">登月計劃看板</h1>
+    <h2 style="color: white">給夥伴們鼓勵</h2>
+  </div>
+</div>
+
+<div class="row">
+  <% @projects.each do |project| %>
+    <% if Date.today - project.finaldate > 0 %>
+      <% d1 = project.finaldate %>
+    <% else %>
+      <% d1 = Date.today %>
+    <% end %>
+    <% d2 = project.created_at.to_date %>
+    <% d3 = project.finaldate %>
+    <% d4 = (d1-d2).to_i %>
+    <% d5 = (d3-d2).to_i %>
+    <% @d6 = (d4*100)/d5 %>
+    <div class="col-sm-6 col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <% if project.showname? %>
+            <h4 class="panel-title">發起人 : <%= project.author.name %></h4>
+          <% else %>
+            <h4 class="panel-title">發起人 : 匿名太空人</h4>
+          <% end %>
+        </div>
+        <div class="panel-body">
+          <h3><%= project.mastergoal %></h3>
+          <h4>執行進度</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= @d6 %>%">
+              <%= @d6 %>%
+            </div>
+          </div>
+          <div>
+            <%= link_to("看計畫", project_path(project), class: "btn btn-primary btn-block", role: "button") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @projects %>

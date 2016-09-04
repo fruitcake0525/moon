@@ -1,0 +1,115 @@
+<div class="jumbotron hidden-print" style="background-image: url(<%=  image_path("show.jpg") %>); background-size: cover; background-repeat: no-repeat; background-attachment:center; background-position: center">
+  <div class="container">
+    <h1 style="color: white">Moon Project</h1>
+    <h1 style="color: white">你已經成功</h1>
+    <h2 style="color: white">跨出第一步</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">登上月球倒數<%= @d7 %>天</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <%= @d6 %>%">
+          <%= @d6 %>%
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">這次的登月目標是什麼？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.mastergoal %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">明確的子目標是什麼？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.secondgoal %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">怎樣才算是成功？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+         <h4><%= @project.success %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">這件事有可能辦到嗎？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.can %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">這件事能配合現實生活嗎？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.how %></h4>
+      </div>
+    </div>
+
+    <br>
+    <div style="text-align:center">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </div>
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center">時間進度怎麼定？</h3>
+      </div>
+      <div class="panel-body" style="text-align:center">
+        <h4><%= @project.when %></h4>
+      </div>
+    </div>
+    <div class="hidden-print">
+    <br>
+    <hr>
+    <br>
+      <%= render "plugin/sumome" %>
+      <%= render "plugin/disqus" %>
+    </div>
+  </div>
+</div>

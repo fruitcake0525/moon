@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mastergoal: MyString
+  secondgoal: MyString
+  success: MyString
+  can: MyString
+  how: MyString
+  when: MyString
+  owner_name: false
+
+two:
+  mastergoal: MyString
+  secondgoal: MyString
+  success: MyString
+  can: MyString
+  how: MyString
+  when: MyString
+  owner_name: false

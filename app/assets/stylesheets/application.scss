@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h1{
+  font-familt: "Noto Sans TC";
+}
+
+body {
+  font-familt: "Noto Sans TC";
+}
+
+.simple_form label {
+  margin: 2px 5px 2px 4px;
+}

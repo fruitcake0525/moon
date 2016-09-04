@@ -1,4 +1,38 @@
 Rails.application.routes.draw do
+  root 'landingpage#index'
+
+#  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, skip: :registrations, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_scope :user do
+    resource :registration,
+      only: [:new, :create, :edit, :update],
+      path: 'users',
+      path_names: { new: 'sign_up' },
+      controller: 'devise/registrations',
+      as: :user_registration do
+        get :cancel
+      end
+  end
+
+  namespace :admin do
+    resources :projects
+    resources :dreams
+    resources :users do
+      member do
+        post :to_admin
+        post :to_normal
+      end
+    end
+  end
+
+  namespace :account do
+    resources :projects
+  end
+
+  resources :projects
+
+  resources :dreams
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
